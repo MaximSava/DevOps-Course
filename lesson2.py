@@ -59,8 +59,8 @@ calculate()
 
 # H.
 
-def name_func(name):
-    return name
+def name_func(your_name):
+    return your_name
 
 
 def number_func(num):
@@ -73,35 +73,23 @@ def sum_numbers(num1: int, num2: int):
     return num1 + num2
 
 
-sum_numbers(1, 2)
-
-
 def add_strings(string1: str, string2: str):
     return " ".join([string1, string2])
 
-
-add_strings('Dev', 'Ops')
 
 # K.
 
 for i in range(0, 5):
     print(("#" * i) + "#")
 
-n = 4
-for i in range(n):
-    print(' ' * i + '#' + '\t' * (4 - i) + '#')
+# M.
+
+inputed_num = int(input("Input Number: "))
 
 
-    for j in range(i):
-        print(('\t' * (4 - j) + '#'))
+def sum_numbers(num: int):
+    suma = num // 10 + num % 10
+    return suma
 
-s = 'dev\tops'
-print(s)
 
-for i in range(1, 20, 2):
-    print(('*' * i).center(20))
-
-for leg in range(3):
-    print(('||').center(20))
-
-print(('\====/').center(20))
+sum_numbers(inputed_num)
