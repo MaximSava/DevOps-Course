@@ -1,27 +1,17 @@
 import random
 
 
-def generate_number(curency_rate=0):
-    if curency_rate != 0:
-        d = 5
-        interval1 = (t - (5 - d))
-        interval2 = (t + (5 - d))
-        print(0)
-    else:
-        # generate random number and save it to var secret_number
-        difficulty = int(input('Input difficulty number:'))
-        secret_number = random.randrange(1, difficulty)
-        return secret_number
+def generate_number():
+    # generate random number and save it to var secret_number
+    difficulty = int(input('Input difficulty number:'))
+    secret_number = random.randrange(1, difficulty)
+    return secret_number
 
 
-def get_guess_from_user(currency_rate=0):
-    if amount_of_usd != 0:
-        user_input_num = int(input("Guess value to a given amount of USD:"))
-        return user_input_num
-    elif amount_of_usd == 0:
-        """ Will prompt the user for a number between 1 to difficulty and return the number."""
-        user_input_num = int(input("Guess generated difficulty number:"))
-        return user_input_num
+def get_guess_from_user():
+    """ Will prompt the user for a number between 1 to difficulty and return the number."""
+    user_input_num = int(input("Guess generated difficulty number:"))
+    return user_input_num
 
 
 def compare_results(secret_number, user_guessed_number):

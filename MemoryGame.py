@@ -10,6 +10,7 @@ def generate_sequence(difficulty_number):
     length will be difficulty."""
     random_numbers_list = random.sample(range(1, 101), difficulty_number)
     print("We going to show random numbers.Are you ready to remember numbers?")
+    # Countdown and Console cleaning
     for i in range(4, 0, -1):
         print(i, end='\r')
         sleep(1)

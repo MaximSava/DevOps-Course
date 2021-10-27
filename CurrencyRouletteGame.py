@@ -5,7 +5,9 @@ api_key = 'c13ba0d0f6b91ad89f19'
 
 difficulty = int(input("Enter Difficulty Number:"))
 
+
 def generate_number():
+    """Generate an interval from amount a money and difficulty level"""
     total_value_money = int(input('Input amount of money to convert:'))
     url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=" + api_key
     response = requests.get(url)
@@ -30,8 +32,8 @@ def play():
     print(result)
 
 
-interval_list = list(range(1, 10,1))
-if 11 in interval_list:
+interval_list2 = list(range(1, 10, 1))
+if 11 in interval_list2:
     print(True)
 else:
     print(False)
