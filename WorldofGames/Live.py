@@ -1,3 +1,8 @@
+import CurrencyRouletteGame
+import GuessGame
+import MemoryGame
+
+
 def welcome(name):
     """Game's welcome message """
     str_welcome = r'Hello ' + name + ' and welcome to the World of Games(WoG).' \
@@ -13,11 +18,17 @@ def load_game():
                              r'       2.Guess Game - guess a number and see if you chose like the computer''\n' \
                              r'       3.Currency Roulette - try and guess the value of a random of USD in ILS''\n:'
 
-    while True:
-        selected_game_option = int(input(choose_options_message))
-        if 1 <= selected_game_option <= 3:
-            while True:
-                selected_dificulty_option = int(input('Please choose game difficulty from 1 to 5:'))
-                if 1 <= selected_dificulty_option <= 5:
-                    break
-            break
+    selected_game_option = int(input(choose_options_message))
+    if 1 <= selected_game_option <= 3:
+        selected_dificulty_option = int(input('Please choose game difficulty from 1 to 5:'))
+        if 1 <= selected_dificulty_option <= 5:
+            if selected_game_option == 1:
+                MemoryGame.play(selected_dificulty_option)
+            elif selected_game_option == 2:
+                GuessGame.play(selected_dificulty_option)
+            elif selected_game_option == 3:
+                CurrencyRouletteGame.play(selected_dificulty_option)
+        else:
+            print("Please enter number between 1-5")
+    else:
+        print("Please enter number between 1-3")
