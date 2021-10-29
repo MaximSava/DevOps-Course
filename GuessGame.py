@@ -1,30 +1,35 @@
 import random
 
 
-def generate_number():
-    # generate random number and save it to var secret_number
-    difficulty = int(input('Input difficulty number:'))
-    secret_number = random.randrange(1, difficulty)
+def generate_number(difficulty_num):
+    """Generate random number and save it to return secret_number"""
+    secret_number = random.randrange(1, difficulty_num)
     return secret_number
 
 
-def get_guess_from_user():
+def get_guess_from_user(input_string):
     """ Will prompt the user for a number between 1 to difficulty and return the number."""
-    user_input_num = int(input("Guess generated difficulty number:"))
-    return user_input_num
+    try:
+        user_input_num = int(input(input_string))
+    except ValueError:
+        print("Value must be the number")
+    else:
+        return user_input_num
 
 
-def compare_results(secret_number, user_guessed_number):
+def compare_results(user_guessed_number, secret_number):
     """ Will compare the the secret generated number to the one prompted by the get_guess_from_user."""
     if user_guessed_number == secret_number:
-        return True
+        print("Your lucky bastard :)")
+    elif user_guessed_number is list:
+        if user_guessed_number in secret_number:
+            print("Your lucky bastard :)")
     else:
-        return False
+        print("Try again :(")
 
 
-def play():
+def play(difficulty_num):
     """ Will call the functions above and play the game. Will return True / False if the user lost or won."""
-    sec_number = generate_number()
-    guessed_num = get_guess_from_user()
-    compare_num = compare_results(sec_number, guessed_num)
-    return print(compare_num)
+    sec_number = generate_number(difficulty_num)
+    guessed_num = get_guess_from_user("Guess generated  number:")
+    compare_results(guessed_num, sec_number)

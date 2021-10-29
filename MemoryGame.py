@@ -1,8 +1,7 @@
 import random
 import os
 from time import sleep
-
-difficulty = int(input())
+from GuessGame import compare_results
 
 
 def generate_sequence(difficulty_number):
@@ -24,20 +23,15 @@ def generate_sequence(difficulty_number):
 def get_list_from_user(difficulty_number):
     """Will return a list of numbers prompted from the user. The list length
     will be in the size of difficulty."""
-    user_list_numbers = [int(input()) for i in range(0,difficulty_number)]
-    return user_list_numbers
-
-
-def is_list_equal(generated_list, list_from_user):
-    """- A function to compare two lists if they are equal. The function will return
-    True / False."""
-    if generated_list == list_from_user:
-        return True
+    try:
+        user_list_numbers = [int(input('Input your numbers:')) for i in range(0, difficulty_number)]
+    except ValueError:
+        print("Value must be the number or Enter one by one numbers")
     else:
-        return False
+        return user_list_numbers
 
 
-def play():
-    gen_seq = generate_sequence(difficulty)
-    list_from_user = get_list_from_user(difficulty)
-    is_list_equal(gen_seq, list_from_user)
+def play(difficulty_num):
+    gen_seq = generate_sequence(difficulty_num)
+    list_from_user = get_list_from_user(difficulty_num)
+    return compare_results(list_from_user, gen_seq)
