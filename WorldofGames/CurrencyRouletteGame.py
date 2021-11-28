@@ -1,5 +1,3 @@
-import socket
-
 import requests
 from GuessGame import compare_results, get_guess_from_user
 import random
@@ -18,6 +16,7 @@ def generate_number(difficulty_num):
         print("Http response error")
     else:
         data = response.json()
+
     currency_rate = int(data['USD_ILS'])
     amount_of_money = random.randrange(1, 101)
     start_interval = (currency_rate * amount_of_money) - (5 - difficulty_num)
@@ -29,4 +28,5 @@ def generate_number(difficulty_num):
 def play(difficulty_num):
     interval_list = generate_number(difficulty_num)
     guess_from_user = get_guess_from_user('Guess a amount of value from USD to ILS:')
-    return compare_results(guess_from_user, interval_list)
+    # return compare_results(guess_from_user, interval_list, difficulty_num)
+    return guess_from_user, interval_list

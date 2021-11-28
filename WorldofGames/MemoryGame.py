@@ -1,7 +1,6 @@
 import random
 import os
 from time import sleep
-from GuessGame import compare_results
 
 
 def generate_sequence(difficulty_number):
@@ -31,8 +30,7 @@ def get_list_from_user(difficulty_number):
         return user_list_numbers
 
 
-
 def play(difficulty_num):
     gen_seq = generate_sequence(difficulty_num)
     list_from_user = get_list_from_user(difficulty_num)
-    return compare_results(list_from_user, gen_seq)
+    return list_from_user, gen_seq

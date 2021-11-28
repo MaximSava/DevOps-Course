@@ -1,4 +1,5 @@
 import random
+from Score import add_score
 
 
 def generate_number(difficulty_num):
@@ -17,12 +18,14 @@ def get_guess_from_user(input_string):
         return user_input_num
 
 
-def compare_results(user_guessed_number, secret_number):
+def compare_results(user_guessed_number, secret_number,difficulty_number):
     """ Will compare the the secret generated number to the one prompted by the get_guess_from_user."""
     if user_guessed_number == secret_number:
+        add_score(difficulty_number)
         print("Your lucky bastard :)")
     elif user_guessed_number is list:
         if user_guessed_number in secret_number:
+            add_score(difficulty_number)
             print("Your lucky bastard :)")
     else:
         print("Try again :(")
@@ -32,4 +35,4 @@ def play(difficulty_num):
     """ Will call the functions above and play the game. Will return True / False if the user lost or won."""
     sec_number = generate_number(difficulty_num)
     guessed_num = get_guess_from_user("Guess generated  number:")
-    compare_results(guessed_num, sec_number)
+    return guessed_num, sec_number
