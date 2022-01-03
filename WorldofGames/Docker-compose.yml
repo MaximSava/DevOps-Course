@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 services:
     web:
         container_name: worldofgames
@@ -6,7 +6,6 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        command: python3 MainScores.py
         volumes:
             - ./scores:/wog
         ports:
