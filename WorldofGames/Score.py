@@ -23,4 +23,3 @@ def add_score(difficulty_number):
         with open(SCORES_FILE_NAME, 'w') as file:
             file.write(str(points_of_winning))
             file.close()
-

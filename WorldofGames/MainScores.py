@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, flash, redirect, session, abort
+from flask import Flask, render_template
 from Utils import SCORES_FILE_NAME
 import os
 
@@ -18,4 +18,4 @@ def score_server():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False, host="0.0.0.0")

@@ -1,5 +1,7 @@
 import os
-SCORES_FILE_NAME = "c:\\temp\\scores.txt"
+# SCORES_FILE_NAME = "c:\\temp\\scores.txt"
+SCORES_FILE_NAME = "/wog/scores/scores.txt"
+
 BAD_RETURN_CODE = ""
 
 

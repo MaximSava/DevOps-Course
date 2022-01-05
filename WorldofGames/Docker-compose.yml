@@ -4,9 +4,9 @@ services:
         container_name: worldofgames
         image: xamsa/wog
         build:
-            context: .
+            context: ./
             dockerfile: Dockerfile
         volumes:
-            - ./scores:/wog
+            - ./temp:/wog/scores/
         ports:
             - 8777:5000
